@@ -80,12 +80,13 @@ Features include:
 ---
 
 ## Project Structure
-
+```
 embedded-pic18f-hal/
 ├── include/ # Public headers (API)
 ├── src/ # Driver implementations
 ├── examples/ # Example applications
 └── README.md
+```
 
 ---
 
