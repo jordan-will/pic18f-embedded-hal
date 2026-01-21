@@ -79,6 +79,48 @@ Features include:
 
 ---
 
+### io
+
+Generic digital I/O abstraction layer.
+
+This module provides a hardware-independent API for configuring and controlling
+PIC digital I/O pins, hiding direct register manipulation (TRIS, LAT, PORT)
+behind simple, expressive functions.
+
+It is designed to be reused by higher-level drivers (LEDs, displays, buttons,
+etc.), improving readability, portability, and maintainability.
+
+Features include:
+- Unified representation of I/O ports (`io_port_t`)
+- Pin direction control (`pinMode`)
+- Digital output control (`digitalWrite`)
+- Clear separation between hardware details and application logic
+
+### display_7_seg
+
+Multiplexed 7-segment display driver.
+
+This module implements a software-multiplexed driver for multi-digit 7-segment
+displays, using an internal character buffer and a periodic update routine.
+
+The driver abstracts segment encoding, digit selection, and display timing,
+allowing the application to write characters or numbers without dealing with
+low-level hardware details.
+
+Currently, multiplexing is implemented using software delays; the design is
+ready to be refactored to a timer-based approach.
+
+Features include:
+- Support for multi-digit 7-segment displays
+- Character-to-segment lookup table
+- Internal display buffer
+- Per-digit character update (`display_7_setchar`)
+- Integer number display (`display_7_setnumber`)
+- Explicit update routine for multiplexing (`display_7_update`)
+- Hardware mapping isolated in a single configuration table
+
+
+
 ## Project Structure
 ```
 embedded-pic18f-hal/
