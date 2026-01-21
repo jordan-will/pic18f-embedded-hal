@@ -105,7 +105,7 @@ void display_7_update(void) {
         //It will be refatored later to use timer
         __delay_ms(6);
 
-        /* garante que ninguém fique ligado fora */
+        /* any pin still on outside */
         for (d = 0; d < DISPLAY_7_DIGITS; d++) {
             digitalWrite(display_pins[d].port,
                     display_pins[d].pin,
